@@ -13,5 +13,9 @@
     <string>1.0</string>
     <key>MainHTML</key>
     <string>wordcount.html</string>
+    <key>Width</key>
+    <integer>400</integer>
+    <key>Height</key>
+    <integer>400</integer>
 </dict>
 </plist>
