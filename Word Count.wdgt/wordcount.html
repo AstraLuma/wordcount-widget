@@ -55,7 +55,7 @@ var Data = {
 		if (typeof localStorage.$projects === "undefined") {
 			localStorage.$projects = JSON.stringify({});
 		}
-		if (typeof localStorage.$projects === "undefined") {
+		if (typeof localStorage.$totals === "undefined") {
 			localStorage.$totals = JSON.stringify({total: 0, today: 0});
 		}
 		if (typeof localStorage.$settings === "undefined") {
@@ -277,7 +277,9 @@ $(function() {
 				)
 			)
 		);
-		window.resizeTo($('#content').width(), $('#content').height());
+		if (typeof widget != 'undefined') {
+			window.resizeTo($('#content').width(), $('#content').height());
+		}
 	}
 	
 	$('#add-project').click(function() {
@@ -307,8 +309,6 @@ $(function() {
 	setInterval(function() {
 		Data.aggregate(updateTotals);
 	}, 10*60*1000);
-	
-	window.resizeTo($('#content').width(), $('#content').height());
 });
 		</script>
 	</head>
